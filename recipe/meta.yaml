@@ -1,0 +1,46 @@
+{% set version = "0.1.0" %}
+
+package:
+  name: zhello
+  version: {{ version }}
+
+source:
+  path: ..
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - make
+  host:
+    - zlib
+  run:
+    - zlib
+
+test:
+  source_files:
+  - tests/sample.txt
+  commands:
+    - 'test -f tests/sample.txt'
+    - 'zhello "Conda build test" | grep "restored: Conda build test"'
+    - 'zhello --level 9 --repeat 2 "abcabcabc" | grep "compressed_size"'
+    - 'zhello --file tests/sample.txt | grep "restored: This file is used to validate file input support."'
+    - 'zhello --json "json mode" | grep -F "\"restored\": \"json mode\""'
+
+about:
+  home: https://github.com/SmartFlowSolution/conda-package-demo
+  summary: Conda demo package with a reusable C library and a CLI built on top of zlib
+  description: |
+    conda-package-demo shows how to package a small native project with Conda.
+    The project builds a reusable C library, a command line tool, and a test suite
+    that validates plain text, file input, JSON output, and different compression levels.
+  license: MIT
+  license_file: LICENSE
+  dev_url: https://github.com/SmartFlowSolution/conda-package-demo
+  doc_url: https://github.com/SmartFlowSolution/conda-package-demo#readme
+
+extra:
+  recipe-maintainers:
+    - SmartFlowSolution

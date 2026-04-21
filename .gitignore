@@ -1,0 +1,100 @@
+# =========================
+
+# Build artifacts (C/C++)
+
+# =========================
+
+*.o
+*.so
+*.a
+*.out
+*.exe
+*.dll
+*.dylib
+
+# Binary outputs
+
+zhello
+bin/
+lib/
+
+# =========================
+
+# Make / CMake
+
+# =========================
+
+Makefile.bak
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# =========================
+
+# Conda / build system
+
+# =========================
+
+build/
+dist/
+conda-bld/
+*.tar.bz2
+*.conda
+
+# =========================
+
+# Python (Conda tooling)
+
+# =========================
+
+**pycache**/
+*.pyc
+*.pyo
+*.pyd
+
+# =========================
+
+# IDEs / Editors
+
+# =========================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# =========================
+
+# OS files
+
+# =========================
+
+.DS_Store
+Thumbs.db
+
+# =========================
+
+# Logs
+
+# =========================
+
+*.log
+
+# =========================
+
+# Temporary files
+
+# =========================
+
+tmp/
+temp/
+
+# =========================
+
+# Test outputs
+
+# =========================
+
+tests/output*
+*.bin
